@@ -1,0 +1,24 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: black;
+}
+
+.all{
+    height: 800px;
+    margin: 60px;
+    display: flex;
+    padding: 10px;
+    background-color: aliceblue;
+    overflow-y: scroll;
+}
+.colleft, .colright{
+    margin: 30px;
+}
+h1, h2{
+    color: white;
+    text-align: center;
+}
+.colleft p, .colright p{
+    text-align: justify;
+}

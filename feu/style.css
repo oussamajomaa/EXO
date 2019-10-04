@@ -1,0 +1,89 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.feu{
+    width:300px; 
+    height: 235px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.feu1, .feu2{
+    width: 100px;
+    height: 235px;
+    background-color: black;
+
+    padding-top: 10px;
+}
+.red1{
+    width: 75px;
+    height: 75px;
+    margin: 0 auto;
+    background-color: red;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+.yellow1{
+    width: 75px;
+    height: 75px;
+    margin: 0 auto;
+    background-color: yellow;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+.green1{
+    width: 75px;
+    height: 75px;
+    margin: 0 auto;
+    background-color: green;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.red2{
+    width: 75px;
+    height: 75px;
+    margin: 0 auto;
+    background-color: red;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+.red2{
+    opacity: 1;
+    animation-delay: 3s;
+    animation-duration: 10s;
+}
+.yellow2{
+    width: 75px;
+    height: 75px;
+    margin: 0 auto;
+    background-color: yellow;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+.green2{
+    width: 75px;
+    height: 75px;
+    margin: 0 auto;
+    background-color: green;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+/*.pot{
+    width: 30px;
+    height: 600px;
+    background-color: black;
+    margin: auto auto;
+}*/
+
+.red1:hover{
+    opacity: 1;
+}
+.yellow1:hover{
+    opacity: 1;
+}
+.green1:hover{
+    opacity: 1;
+}
+

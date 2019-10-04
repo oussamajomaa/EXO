@@ -1,0 +1,50 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+/*centrer le menu*/
+.nav ul{
+    text-align: center;
+    
+}
+
+/*afficher le menu horizontalement et changer la police*/
+.nav ul li{
+    display: inline-block;
+    font-size: 30px;
+    font-weight: bolder;
+    margin: 10px;
+    
+}
+
+/*faire disparaitre le sous menu*/
+.nav ul li ul{
+    display: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.nav ul li a{
+    color: red;
+}
+
+.nav ul li ul li a{
+    color: black;
+    text-decoration: none;
+}
+
+/* changer la couleur de police des liens losque la souris survole dessu */
+.nav li a:hover {
+    color:rgb(161, 11, 11);
+}
+
+/*reafficher le sous menu en block losque la souris survole dessu*/
+.nav ul li:hover ul {
+    display:block;
+}
+
+/* fixer la posistion de sous menu */
+.nav li ul {
+    position:absolute;
+}

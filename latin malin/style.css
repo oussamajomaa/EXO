@@ -1,0 +1,60 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: silver;
+}
+.container{
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: white;
+    
+}
+.block1, .block2, .block3{
+    display: flex;
+    margin: 0 auto;
+    margin-top: 20px;
+    align-items: center;
+}
+.n3, .n2, .n1{
+    border: 1px solid silver;
+    margin-top: 20px;
+}
+h2{
+    text-align: center;
+}
+
+    
+
+.p1, .p2, .p3{
+    text-align: justify;
+    padding: 10px;
+    font-size: 20px;
+}
+.block3 img{
+    float: left;
+
+}
+ul li{
+
+    display: inline-block;
+    margin: 10px;
+
+}
+ul li a{
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+ul{
+    text-align: right;
+    margin: 0 auto;
+    width:80%;
+}
+.nav{
+
+    margin: 0 auto;
+    background-color: rgb(104, 98, 98);
+}
+

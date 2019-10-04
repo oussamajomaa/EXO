@@ -1,0 +1,47 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+header{
+  height: 150px;
+  background-color:blue;
+}
+nav{
+  height: 100px;
+  background-color: royalblue;
+}
+.left{
+  width: 85%;
+  height: 600px;
+  background-color: dimgray;
+  float: left;
+
+}
+.right{
+  width: 15%;
+  height: 600px;
+  background-color: rgb(140, 140, 182);
+  float:right;
+}
+
+footer{
+  height: 100px;
+  width: 100%;
+  background-color: royalblue;;
+  position: fixed;
+  bottom: 0px;
+}
+
+
+@media only screen and (max-width: 400px) {
+
+ 
+}
+
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+
+  
+}

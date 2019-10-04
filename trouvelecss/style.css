@@ -1,0 +1,88 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color:black;
+    width: 1400px;
+}
+
+
+h1{
+    color: white;
+    text-align: center;
+}
+
+
+
+p{
+    font-size: 30px;
+    text-align: center;
+    padding-top: 60px;
+}
+.pp{
+    padding-top: 1px;
+}
+.a1{
+    width: 600px;
+    height: 250px;
+    background-color: rgb(65, 68, 70);
+    position: fixed;
+    top: 80px;
+    left: 10px;
+}
+
+.a2{
+    width: 740px;
+    height: 250px;
+    background-color: blue;
+    position: fixed;
+    left: 650px;
+    top: 80px;
+}
+.a7{
+    width: 50px;
+    height: 250px;
+    background-color: blue;
+    position: fixed;
+    right: 0px;
+    top: 30px;
+}
+.a3{
+    width: 400px;
+    height: 250px;
+    background-color: rgb(65, 68, 70);
+    position: fixed;
+    left: 305px;
+    top: 380px;
+}
+.a4{
+    width: 400px;
+    height: 250px;
+    background-color: rgb(65, 68, 70);
+    position: fixed;
+    left: 750px;
+    top: 380px;
+}
+.a5{
+    width: 280px;
+    height: 110px;
+    background-color: rgb(65, 68, 70);
+    position: fixed;
+    bottom: 0px;
+    margin-left: 10px;
+}
+.a{
+    width: 280px;
+    height: 55px;
+    background-color: blue;
+    position: fixed;
+    bottom: 0px;
+    left: 600px;
+}
+.a6{
+    width: 500px;
+    height: 110px;
+    background-color: rgb(65, 68, 70);
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+}
