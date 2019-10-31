@@ -1,0 +1,84 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: dodgerblue;
+}
+
+.card1{
+    background-color:lightblue;
+    width:300px;
+    height:500px;
+    transition: 2s ease; /*permet de modifier en douceur*/
+    transform-style: preserve-3d; /*faire apparaitre la carte en arrière*/
+    /* position: absolute;
+    top:200px;
+    left:10px; */
+}
+.card2{
+    background-color:lightblue;
+    width:300px;
+    height:500px;
+    transition: 2s ease;
+    transform-style: preserve-3d; 
+    /* position: absolute;
+    top:200px;
+    left:320px;  */
+}
+.card3{
+    background-color:lightblue;
+    width:300px;
+    height:500px;
+    transition: 2s ease;
+    transform-style: preserve-3d;
+    /* position: absolute;
+    top:200px;
+    left:630px;  */
+}
+.card4{
+    background-color:lightblue;
+    width:300px;
+    height:500px;
+    transition: 2s ease;
+    transform-style: preserve-3d; 
+    /* position: relative;
+    top:200px;
+    left:940px;  */
+}
+
+section{
+    perspective: 2000px; /*donner une perspective losque l'image tourne*/
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /*distribuer les éléments dans la section sur toute la largeur de la section*/
+    margin-top: 200px;
+}
+/*tourner l'image 180 degré varticalement*/
+article:hover{
+    transform:rotateY(180deg);
+}
+
+.front,.back{
+    background-color:lightblue;
+    width: 300px;
+    height: 500px;
+    position:absolute; 
+    backface-visibility: hidden; /*faire disparaitre la face*/
+    text-align: center;
+}
+.back{
+    transform: rotateY(180deg);
+}
+
+h2{
+    text-align: center;
+}
+img{
+    width: 300px;
+    height: 500px;
+}
+p{
+    width: 300px;
+    height: 500px; 
+}
+

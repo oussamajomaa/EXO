@@ -25,8 +25,16 @@ body{
     margin: 0px;
 }
 
-.nav ul li a{
-    color: red;
+
+
+/*reafficher le sous menu en block losque la souris survole dessu*/
+.nav ul li:hover ul {
+    display:block;
+}
+
+/* fixer la posistion de sous menu */
+.nav li ul {
+    position:absolute;
 }
 
 .nav ul li ul li a{
@@ -38,13 +46,6 @@ body{
 .nav li a:hover {
     color:rgb(161, 11, 11);
 }
-
-/*reafficher le sous menu en block losque la souris survole dessu*/
-.nav ul li:hover ul {
-    display:block;
-}
-
-/* fixer la posistion de sous menu */
-.nav li ul {
-    position:absolute;
+.nav ul li a{
+    color: red;
 }

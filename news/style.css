@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Almarai|Big+Shoulders+Display|Crimson+Text|Grenze|Lobster|Mansalva|Merriweather|Montserrat|Open+Sans+Condensed:300&display=swap');
+/*importer des polices de google*/
+
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(65, 102, 139);
+}
+.contenaire{
+    width: 95%;
+    height: auto;
+    display: flex; /*distribuer les images cote à cote*/
+    flex-wrap: wrap; /*Les éléments flexibles sont disposé sur plusieurs lignes*/
+    margin: auto auto;
+    justify-content: center; /*centre les éléments verticalement*/
+    margin-top: 20px;
+    overflow: hidden;
+}
+.australie, .chine, .turquie, .indonisie, .usa, .desert, .cambodge, .argent, .croitie, .maurice{
+
+    width: 360px;
+    height: 280px;
+    margin: 5px;
+    background-position: center;
+    transition: 3s ease;
+}
+
+p{
+    width: 90%;
+    position: relative;
+    top: 200px;
+    left: 5px;
+    color: white;
+    background-color: black;
+    text-align: center;
+    margin: 0 auto;
+    opacity: 0;
+    font-size: 20px;
+    font-family: 'Big Shoulders Display', cursive;
+}
+
+
+.australie {
+    background-image: url("australie.jpg");
+}
+.chine{
+    background-image: url("chine.jpg");
+}
+.turquie{
+    background-image: url("turquie.jpg");
+}
+.usa{
+    background-image: url("usa.jpg");
+}
+.croitie{
+    background-image: url("croitie.jpg");
+}
+.cambodge{
+    background-image: url("cambodge.jpg");
+}
+.argent{
+    background-image: url("argent.jpg");
+}
+.indonisie{
+    background-image: url("indonisie.jpg");
+}
+.maurice{
+    background-image: url("maurice.jpg");
+}
+.desert{
+    background-image: url("desert.jpg");
+}
+.australie:hover p, .chine:hover p, .usa:hover p, .turquie:hover p, .indonisie:hover p, .maurice:hover p, 
+.argent:hover p, .desert:hover p, .cambodge:hover p, .croitie:hover p{
+    opacity: 1;
+}
+.australie:hover, .chine:hover, .usa:hover, .turquie:hover, .indonisie:hover, .maurice:hover, 
+.argent:hover, .desert:hover, .cambodge:hover, .croitie:hover{
+    background-position: 100%;
+    transition: 2s ease;
+}
+

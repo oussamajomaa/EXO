@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Hello</p>
+    <p>Bonjour</p>
+    <script>
+       let x= document.querySelectorAll('p');
+       x[0].style.color="red";
+
+       x[1].style.position="relative";
+       x[1].style.position="relative";
+       x[1].style.textAlign="right";
+    //    x[1].style.top="100px";
+
+       let y= x[0].innerHTML;
+       console.log(y);
+       x[0].innerHTML=x[1].innerHTML;
+       x[1].innerHTML=y;
+
+    </script>
+</body>
+
+</html>

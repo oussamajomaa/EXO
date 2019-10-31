@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fiche Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width" />
+
+</head>
+
+
+<body>
+
+    
+    <script>
+        let canv = document.createElement("canvas");
+        let canvas = document.body.appendChild(canv);
+        canvas.width=512;
+        canvas.height=256;
+        canvas.style.backgroundColor="#D6D6D6";
+
+        
+        let ctx = canvas.getContext('2d');
+        
+        let img1=new Image();
+        img1.src="olive.png";
+        ctx.drawImage(img1, 1 , 1);;       
+        canvas.appendChild(img1);
+        
+
+        let img2=new Image();
+        img2.src="mangue.png";
+        ctx.drawImage(img2, 129 , 1);
+        canvas.appendChild(img2);
+
+        let img3=new Image();
+        img3.src="pomme.png";
+        ctx.drawImage(img3, 267 , 1);
+        canvas.appendChild(img3);
+
+        let img4= new Image();
+        img4.src="cerises.png";
+        ctx.drawImage(img4, 386, 1);
+        canvas.appendChild(img4);
+
+        let img5= new Image();
+        img5.src="abricot.png";
+        ctx.drawImage(img5, 1, 129);
+        canvas.appendChild(img5);
+
+        let img6= new Image();
+        img6.src="poire.png";
+        ctx.drawImage(img6, 129, 129);
+        canvas.appendChild(img6);
+
+        let img7= new Image();
+        img7.src="prune.png";
+        ctx.drawImage(img7, 267, 129);
+        canvas.appendChild(img7);
+
+        let img8= new Image();
+        img8.src="pomme_rouge.png";
+        ctx.drawImage(img8, 386, 129);
+        canvas.appendChild(img8);
+    </script>
+
+
+</body>
+
+</html>

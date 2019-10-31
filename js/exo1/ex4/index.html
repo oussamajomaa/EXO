@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="cos.jpg">
+    <script>
+        let myImage=document.querySelector("img");
+        console.log(myImage.src);
+        // myImage.addEventListener('click', function (event) {
+        //     myImage.setAttribute("src", "cos3.jpg");
+        // });
+
+        myImage.onclick = function () {
+            myImage.setAttribute("src", "cos3.jpg");
+            myImage.style.transform="translate(120px, 50px)";
+
+            myImage.style.transition="all 5s ease";
+            
+
+        }
+        
+    </script>
+</body>
+
+</html>

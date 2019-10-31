@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fiche Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width" />
+    <style>
+        #boule {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: red;
+        }
+
+        #circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 1px solid black;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="circle" ></div>
+    <div id="boule" draggable="true"></div>
+
+    <script>
+        function allowdrop(e) {
+            e.preventDefault();
+            console.log(e);
+           
+        }
+        function drag(e) {
+            e.dataTransfer.setData("text/plain", e.target.id);
+        }
+        function drop(e) {
+            e.preventDefault();
+            const data = e.dataTransfer.getData("text");
+            e.target.appendChild(document.getElementById(data));
+        }
+
+        const circle = document.querySelector('#circle');
+        const boule = document.querySelector('#boule');
+
+
+        boule.addEventListener('dragstart', drag);
+        circle.addEventListener('dragover', allowdrop);
+        circle.addEventListener('drop', drop);
+
+
+    </script>
+
+
+</body>
+
+</html>

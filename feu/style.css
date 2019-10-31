@@ -3,17 +3,16 @@ body{
     padding: 0px;
 }
 .feu{
-    width:300px; 
+    width:450px; 
     height: 235px;
     display: flex;
     margin: 0 auto;
 }
 
-.feu1, .feu2{
+.feu1, .feu2, .feu4{
     width: 100px;
     height: 235px;
     background-color: black;
-
     padding-top: 10px;
 }
 .red1{
@@ -22,15 +21,15 @@ body{
     margin: 0 auto;
     background-color: red;
     border-radius: 50%;
-    opacity: 0.5;
+    opacity: 0.3;
 }
 .yellow1{
     width: 75px;
     height: 75px;
     margin: 0 auto;
-    background-color: yellow;
+    background-color: orange;
     border-radius: 50%;
-    opacity: 0.5;
+    opacity: 0.3;
 }
 .green1{
     width: 75px;
@@ -38,44 +37,75 @@ body{
     margin: 0 auto;
     background-color: green;
     border-radius: 50%;
-    opacity: 0.5;
+    opacity: 0.3;
 }
 
 .red2{
     width: 75px;
     height: 75px;
     margin: 0 auto;
-    background-color: red;
     border-radius: 50%;
-    opacity: 0.5;
-}
-.red2{
-    opacity: 1;
-    animation-delay: 3s;
+    animation-name: red3;
     animation-duration: 10s;
+    /* animation-delay: 1s; l'animation commence après 1 seconde */
+    animation-iteration-count: infinite; /*appliquer l'animation à jamais*/
 }
-.yellow2{
-    width: 75px;
-    height: 75px;
-    margin: 0 auto;
-    background-color: yellow;
-    border-radius: 50%;
-    opacity: 0.5;
-}
+
 .green2{
     width: 75px;
     height: 75px;
     margin: 0 auto;
-    background-color: green;
     border-radius: 50%;
-    opacity: 0.5;
+    animation-name: green3;
+    animation-duration: 10s;
+    /* animation-delay: 4s; */
+    animation-iteration-count: infinite;
 }
-/*.pot{
-    width: 30px;
-    height: 600px;
-    background-color: black;
-    margin: auto auto;
-}*/
+
+.yellow2{
+    width: 75px;
+    height: 75px;
+    margin: 0 auto;
+    border-radius: 50%;
+    animation-name: yellow3;
+    animation-duration: 10s;
+    /* animation-delay: 7s; */
+    animation-iteration-count: infinite;
+}
+
+.red4{
+    width: 75px;
+    height: 75px;
+    margin: 0 auto;
+    border-radius: 50%;
+    animation-name: red5;
+    animation-duration: 10s;
+    /* animation-delay: 1s; l'animation commence après 1 seconde */
+    animation-iteration-count: infinite; /*appliquer l'animation à jamais*/
+}
+
+.green4{
+    width: 75px;
+    height: 75px;
+    margin: 0 auto;
+    border-radius: 50%;
+    animation-name: green5;
+    animation-duration: 10s;
+    /* animation-delay: 4s; */
+    animation-iteration-count: infinite;
+}
+
+.yellow4{
+    width: 75px;
+    height: 75px;
+    margin: 0 auto;
+    border-radius: 50%;
+    animation-name: yellow5;
+    animation-duration: 10s;
+    /* animation-delay: 7s; */
+    animation-iteration-count: infinite;
+}
+
 
 .red1:hover{
     opacity: 1;
@@ -84,6 +114,56 @@ body{
     opacity: 1;
 }
 .green1:hover{
-    opacity: 1;
+    opacity: 1; 
 }
 
+@keyframes red3{
+    0% {background-color: red}
+    45% {background-color: red;}
+    46% {background-color:black;}
+    100% {background-color: black;}
+}
+
+@keyframes green3{
+    0% {background-color: black;}
+    45% {background-color: black;}
+    46% {background-color: green;}
+    90% {background-color: green;} 
+    91% {background-color: black;}
+    100% {background-color: black;}
+}
+
+@keyframes yellow3{
+    0% {background-color: black;}
+    91% {background-color: black;}
+    92% {background-color: orange;}
+    99% {background-color: orange;}
+    100% {background-color: black;}
+}
+
+@keyframes green5{
+    0% {background-color: green;}
+    45% {background-color: green;}
+    46% {background-color:black;}
+    100% {background-color: black;}
+}
+
+@keyframes yellow5{
+    0% {background-color: black;}
+    44% {background-color: black;}
+    45% {background-color: black;}
+    46% {background-color:orange;}
+    55% {background-color: orange;}
+    56% {background-color: orange;}
+    57% {background-color: black;}
+    
+}
+
+@keyframes red5{
+    0% {background-color: black;}
+    56% {background-color: black;}
+    57% {background-color: black;}
+    58% {background-color: red;}
+    99% {background-color: red;}
+    100% {background-color: red;}
+}
