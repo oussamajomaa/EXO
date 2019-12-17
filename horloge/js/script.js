@@ -9,6 +9,8 @@ function myTimer() {
     let m = d.getMinutes();
     let h = d.getHours();
     let time= s+60*m+3600*h;
+    console.log(m);
+    console.log(time);
 
     // let sCircle = s/60*360;
     // let mCircle = m/60*360;
@@ -30,6 +32,7 @@ function myTimer() {
 
 let prenom = document.createElement("p");
 prenom.innerHTML = "ELIANA";
+prenom.style.color="white"
 prenom.style.transform = "rotate(90deg)";
 prenom.style.marginTop="100px";
 minutes.appendChild(prenom);

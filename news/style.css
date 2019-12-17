@@ -7,7 +7,7 @@ body{
     background-color: rgb(65, 102, 139);
 }
 .contenaire{
-    width: 95%;
+    /* width: 95%; */
     height: auto;
     display: flex; /*distribuer les images cote à cote*/
     flex-wrap: wrap; /*Les éléments flexibles sont disposé sur plusieurs lignes*/

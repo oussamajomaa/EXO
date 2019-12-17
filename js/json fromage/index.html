@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>json fromage</title>
+    <style>
+        body {
+            overflow-x: hidden;
+            background: url('fromage.jpg');
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+
+        let section = document.createElement('section');
+        document.body.appendChild(section);
+        section.style.width = '25%';
+        section.style.display = 'flex';
+        section.style.flexFlow = 'column';
+        section.style.cssFloat = 'right';
+        let h1 = document.createElement('h1');
+        document.body.appendChild(h1);
+        h1.textContent = 'Les meilleurs Fromage du Monde';
+        h1.style.writingMode = 'vertical-lr';
+        h1.style.position = 'fixed'
+        h1.style.left = '70%';
+        h1.style.top = '22%';
+        h1.style.color = 'yellow';
+
+        function addElement(type, txt, target){
+            let p = document.createElement(type);
+            console.log(txt, txt.length);
+            if(txt.length > 0){
+                console.log(p);
+                p.textContent(txt);
+            }
+            
+            target.appendChild(p);
+
+            return p;
+        }
+
+        let xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = function () {
+
+            if (this.readyState == 4 && this.status == 200) {
+                let rep = JSON.parse(xhr.response);
+                console.log('hi')
+                for (let i = 0; i < rep.length; i++) {
+
+                    let article = document.createElement('article');
+                    article.setAttribute('class', 'fromage');
+                    section.appendChild(article);
+
+                    let p1 = addElement('h2', rep[i].nom, article);
+                    let p2 = addElement('h3', rep[i].type, article);
+                    let p3 = addElement('h4', rep[i].pays, article);
+                    let div = addElement('div', '', article);
+
+                    // let p1 = document.createElement('h2');
+                    // let p2 = document.createElement('h3');
+                    // let p3 = document.createElement('h4');
+                    // let div = document.createElement('div');
+
+                    // article.appendChild(p1);
+                    // article.appendChild(p2);
+                    // article.appendChild(p3);
+                    // article.appendChild(div);
+
+                    // p1.textContent = rep[i].nom;
+                    // p2.textContent = rep[i].type;
+                    // p3.textContent = rep[i].pays;
+
+                    function fromage(d) {
+                        let img = document.createElement('img');
+                        div.appendChild(img);
+                        img.src = 'etoile.png';
+                        img.style.width = '10%';
+                    }
+
+                    switch (rep[i].classement) {
+                        case 1:
+                            fromage(div);
+                            break;
+                        case 2:
+                            for (let j = 0; j < 2; j++) { fromage(div); }
+                            break;
+                        case 3:
+                            for (let j = 0; j < 3; j++) { fromage(div); }
+                            break;
+                        case 4:
+                            for (let j = 0; j < 4; j++) { fromage(div); }
+                            break;
+                        case 5:
+                            for (let j = 0; j < 5; j++) { fromage(div); }
+                            break;
+                        case 6:
+                            for (let j = 0; j < 6; j++) { fromage(div); }
+                            break;
+                    }
+
+                    article.style.display = 'flex';
+                    article.style.flexFlow = 'column'
+                    article.style.backgroundColor = 'white';
+                    article.style.width = '100%';
+                    article.style.margin = '1%';
+                    article.style.padding = '10px'
+
+                }
+            }
+        }
+
+        xhr.open('get', 'fromage.json', true);
+        xhr.send();
+
+    </script>
+</body>
+
+</html>

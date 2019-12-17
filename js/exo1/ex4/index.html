@@ -11,21 +11,20 @@
 <body>
     <img src="cos.jpg">
     <script>
-        let myImage=document.querySelector("img");
-        console.log(myImage.src);
-        // myImage.addEventListener('click', function (event) {
+        let myImage = document.querySelector("img");
+        // console.log(myImage.src);
+        // myImage.onclick = function () {
         //     myImage.setAttribute("src", "cos3.jpg");
-        // });
+        //     myImage.style.transform = "translate(120px, 50px)";
+        //     myImage.style.transition = "all 5s ease";
 
-        myImage.onclick = function () {
+
+        // }
+
+        myImage.addEventListener("mouseover", () => {
             myImage.setAttribute("src", "cos3.jpg");
-            myImage.style.transform="translate(120px, 50px)";
+        });
 
-            myImage.style.transition="all 5s ease";
-            
-
-        }
-        
     </script>
 </body>
 

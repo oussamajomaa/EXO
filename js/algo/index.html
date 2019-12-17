@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,
+        body,
+        main {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            width: 50%;
+
+            margin: auto;
+            border: 4px solid rgb(25, 2, 78);
+            margin-top: 20vh;
+        }
+
+        section {
+            margin: auto;
+            padding: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 20px;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header>
+            <h2>Veuillez saisir votre Identifiant et votre Mot de Passe</h2>
+        </header>
+        <section>
+            <label for="username">Identifiant</label>
+            <input type="text" id="username" placeholder="Votre identifiant" value="" autocomplete="off" required maxlength="8">
+            <label for="password">Mot de Passe</label>
+            <input type="password" id="password" placeholder="Votre mot de pass" value="" autocomplete="off" required>
+            <button id="btn">Valider</button>
+        </section>
+    </main>
+    <script>
+
+
+        let btn = document.getElementById('btn');
+        let essai = 3;
+        btn.addEventListener('click', function () {
+            let user = document.getElementById('username').value;
+            let pass = document.getElementById('password').value;
+            if ((user == 'oussama') && (pass == 'jomaa')) {
+                window.location = 'page.html';
+            }
+            else {
+                essai--;
+                console.log(essai);
+            }
+            if (essai === 0) {
+                document.getElementById('username').disabled = true;
+                document.getElementById('password').disabled = true;
+                alert('échoué 3 fois');
+            }
+        });
+
+
+
+    </script>
+</body>
+
+</html>

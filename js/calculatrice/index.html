@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fiche Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form id="main">
+        <input type="text" value="" id="ecran" disabled>
+        <input type="button" value="1" class="num">
+        <input type="button" value="2" class="num">
+        <input type="button" value="3" class="num">
+        <input type="button" value="+" class="num op">
+        <input type="button" value="4" class="num">
+        <input type="button" value="5" class="num">
+        <input type="button" value="6" class="num">
+        <input type="button" value="-" class="num op">
+        <input type="button" value="7" class="num">
+        <input type="button" value="8" class="num">
+        <input type="button" value="9" class="num">
+        <input type="button" value="*" class="num op">
+        <input type="button" value="0" class="num">
+        <input type="button" value="." class="num">
+        <input type="button" value="%" class="num op">
+        <input type="button" value="/" class="num op">
+        <input type="button" value="00" class="num">
+        <input type="button" value="000" class="num">
+        <input type="button" value="x²" class="num op" onclick="caree()">
+        <input type="button" value="√" class="num op" onclick="racine()">
+        <input type="button" value="=" class="num num1" onclick="resultat();">
+        <input type="button" value="ce" class="num num1" onclick="effacer();">
+    </form>
+
+    <script>
+
+        let myEcran = document.getElementById("ecran"); // affecter l'élément input id=ecran à la valeur myEcran
+
+        let num = document.querySelectorAll(".num") // affecter l'élément input class=num à la valeur num qui devient un tableau
+        
+        for (let i = 0; i < num.length; i++) {  
+            num[i].addEventListener("click", saisir); // ajouter un écouteur en clicquant sur un bouton et appeler la fonction "saisir"
+        }
+
+        function saisir(x) {
+            let saisi = x.target.value;
+            if ((saisi != '=') && (saisi != 'ce') && (saisi != '√') && (saisi != 'x²') && (saisi != '^')) {
+                myEcran.value += saisi;
+                myEcran.style.color = "rgb(65, 13, 13);";
+            }
+        }
+        // function deleteRepeat(){
+        //     let last=myEcran.value.substr(myEcran.value.length-1);
+        //     if (last=)
+        // }
+
+        // affecter l'escran avec le chiffre saisi
+        // function entrer(x) {
+        //     let saisi = x.value;
+        //     myEcran.value += saisi;
+        // }
+
+        // effacer le contenu de l'écran
+        function effacer() {
+            myEcran.value = null;
+            myEcran.style.color = "rgb(65, 13, 13)";
+        }
+
+        // obtenir le résultat grâce à la méthode "eval" qui permet d'évaluer du code javascript dans une chaine de caractères 
+        function resultat() {
+            myEcran.value = eval(myEcran.value);
+            myEcran.style.color = "yellow";
+
+        }
+
+        // ajouter un event lorsqu'on tape sur le clavier
+        document.addEventListener('keydown', clavier);
+
+        // tester le caractère saisi à l'aide del la propriété "KeyboardEvent.key" qui retourne la valeur d’une ou plusieurs touches pressées par l’utilisateur
+        function clavier(x) {
+            if (((Number(x.key)) || (x.key == '+') || (x.key == '-') || (x.key == '*') || (x.key == '/'))) {
+                myEcran.value += x.key;
+                myEcran.style.color = "rgb(65, 13, 13)";
+            }
+            if (x.key == '=') {
+                resultat();
+            }
+            if (x.key == 'Enter') {
+                resultat();
+            }
+            if (x.key == 'Backspace') {
+                let l = myEcran.value.split("");
+                l.pop();
+                myEcran.value = l.join("");
+            }
+            if (x.key == 'Delete') {
+                effacer();
+            }
+        }
+        function caree() {
+            myEcran.value = eval(myEcran.value * myEcran.value)
+        }
+        function racine() {
+            myEcran.value = Math.sqrt(eval(myEcran.value));
+        }
+    </script>
+
+
+</body>
+
+</html>

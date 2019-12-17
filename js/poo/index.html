@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0; 
+            padding: 0;
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+
+<body>
+    <script>
+        // let canv = document.createElement('canvas');    // créer un canvas
+        // document.body.appendChild(canv);// ajouter le canvas à la page 
+        // canv.style.backgroundColor = "#D6D6D6";
+        // canv.width=window.innerWidth;
+        // canv.height=window.innerHeight;
+
+        // let context = canv.getContext('2d');
+        // let img = document.createElement('img');
+
+        // img.src = "olive.png";
+              
+        // let x=canv.width/2-69;
+        // let y=canv.height/2-69;
+
+        // img.onload = () => {
+        // context.drawImage(img, x, y);
+
+        // }
+        // console.log(img);
+
+        // window.addEventListener('keydown', function (e) {
+        //     if (e.key == 'ArrowRight'){
+        //         context.clearRect(x, y, 128, 128);
+        //         x+=128;
+        //         console.log(x);
+        //         if (x>1157.5){
+        //             x=-122.5;
+        //         context.drawImage(img, x, y);
+        //         }
+        //         else{context.drawImage(img, x, y);}
+        //     }
+        //     if (e.key == 'ArrowLeft'){
+        //         context.clearRect(x, y, 128, 128);
+        //         x-=128;
+        //         if (x<-122.5){
+        //             x=1157.5
+        //         context.drawImage(img, x, y);
+        //         }
+        //         else{context.drawImage(img, x, y);}
+        //     }
+        //     if (e.key == 'ArrowUp'){
+        //         context.clearRect(x, y, 128, 128);
+        //         y-=128;
+        //         if (y<-149){
+        //             y=747;
+        //         context.drawImage(img, x, y);
+        //         }
+        //         else{context.drawImage(img, x, y);}
+        //     }
+        //     if (e.key == 'ArrowDown'){
+        //         context.clearRect(x, y, 128, 128);
+        //         y+=128;
+        //         if (y>875){
+        //             y=-21;
+        //         context.drawImage(img, x, y);
+        //         }
+        //         else{context.drawImage(img, x, y);}
+        //     }
+
+        // })
+
+        class Canva{
+            constructor(){
+                // création d'une variable this.canvas, qui contient un canvas, et ses propriétés
+                this.canvas = document.createElement("canvas")
+                this.canvas.height = window.innerHeight
+                this.canvas.width = window.innerWidth
+                this.canvas.style.border = "1px black solid"
+                this.ctx = this.canvas.getContext("2d")
+
+                // Création d'un fruit, a l'aide d'une classe
+                this.fruit = new Fruit(this.canvas, this.ctx, "olive.png")
+                this.fruit2 = new Fruit(this.canvas, this.ctx, "cerises.png")
+                this.fruit3 = new Fruit(this.canvas, this.ctx, "abricot.png")
+
+                console.log(this.fruit);
+                
+                // On met le canvas dans le body, simplement
+                document.querySelector("body").appendChild(this.canvas)
+
+                // On llance une fonction qui s'execute tous les 20ms
+                setInterval( () => { this.clear() }, 20)
+            }
+
+            // On lance les méthodes pour rafraichir le canvas
+            clear(){
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.width)
+                this.fruit.draw(100, 200)
+                this.fruit2.draw(300, 400)
+                this.fruit3.draw(600, 100)
+            }
+        }
+
+
+        class Fruit{
+            constructor(canvas, ctx, image){
+                // On récupéré le canvas, le context, et l'image
+                this.canvas = canvas
+                this.ctx = ctx
+
+                // on met une position X et Y juste pour le faire bouger un peu
+                this.positionX = 0
+                this.positionY = 0
+
+                this.image = new Image()
+                this.image.src = image
+                // faut attendre que l'image soit chargé avant de pouvoir la dessiné sur le canvas
+                this.image.onload = () => {
+                    this.ctx.drawImage(this.image, 0, 0)
+                }
+            }
+
+            // Method draw(), qu'on se sert dans le class Canva, pour changer la position des images, et dessiner
+            draw(posX, posY){
+                this.ctx.drawImage(this.image, this.positionX, this.positionY)
+
+                    if(this.positionX > this.canvas.width){
+                        this.positionX = 0
+                        this.positionY = 0
+                    }else{
+                        // random c'est plus fun
+                this.positionX = posX +  Math.floor( Math.random() * 30)
+                this.positionY =  posY + Math.floor( Math.random()*20)
+
+                    }
+
+            }
+        }
+
+
+        let oussama = {
+            name : "Oussama",
+            parler : function(){ return "salut connard Yoann"}
+
+        }
+
+
+        let canva = new Canva()
+
+        console.log(canva);
+
+        console.log(oussama.parler());
+
+
+    setInterval( function(){ console.log("salut");
+    }, 20)
+        
+        
+        console.log(this);
+        
+    </script>
+</body>
+
+</html>

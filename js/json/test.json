@@ -1,0 +1,64 @@
+{
+    "etudiant": [
+        {
+            "nom": "OUSSAMA",
+            "age": 49,
+            "sexe": true,
+            "note": [
+                20,
+                25,
+                30
+            ]
+        },
+        {
+            "nom": "MARIE",
+            "age": 33,
+            "sexe": true,
+            "note": [
+                24,
+                25,
+                60
+            ]
+        },
+        {
+            "nom": "CAROLINE",
+            "age": 33,
+            "sexe": true,
+            "note": [
+                24,
+                25,
+                60
+            ]
+        },
+        {
+            "nom": "SIDI",
+            "age": 33,
+            "sexe": true,
+            "note": [
+                24,
+                25,
+                60
+            ]
+        },
+        {
+            "nom": "MAHMOUD",
+            "age": 33,
+            "sexe": true,
+            "note": [
+                24,
+                25,
+                60
+            ]
+        },
+        {
+            "nom": "ALAA",
+            "age": 33,
+            "sexe": true,
+            "note": [
+                24,
+                25,
+                60
+            ]
+        }
+    ]
+}

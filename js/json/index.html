@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        let xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = function () {
+
+            if (this.readyState == 4 && this.status == 200) {
+
+                let responseEtudiant = JSON.parse(xhr.response);
+                let info=responseEtudiant.etudiant;
+
+                for (let i=0; i<info.length; i++){
+
+                    console.log(info.length);
+                    let article=document.createElement('article');
+                    article.setAttribute('id','js');
+                    document.body.appendChild(article);
+                    console.log(article)
+                    document.querySelectorAll('article')[i].style.border='2px solid red'
+
+                    let h1=document.createElement('h1');
+                    article.appendChild(h1);
+                    h1.textContent=info[i].nom;
+                    let par=document.createElement('h2');
+                    article.appendChild(par);
+                    par.textContent=info[i].age;
+                    
+                }
+                
+            }
+            
+        }
+        xhr.open('get', 'test.json', true);
+        xhr.send();
+
+    </script>
+</body>
+
+</html>

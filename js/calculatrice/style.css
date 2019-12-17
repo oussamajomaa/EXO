@@ -1,0 +1,66 @@
+html,body{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: rgb(160, 160, 180);
+}
+
+form{
+    width: 400px;
+    height: 425px;
+    box-sizing: border-box;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    margin-top: 50%;
+    align-items: center;
+}
+.num{
+    width: 90px;
+    height: 50px;
+    background-color: rgb(136, 148, 160);
+    border: 1px solid rgb(248, 248, 248);
+    box-sizing: border-box;
+    color: rgb(248, 248, 248);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+    box-shadow: 0 4px 2px -2px gray;
+}
+.num1{
+    width: 190px;
+    background-color: rgb(170, 128, 32);
+    color: rgb(116, 16, 16);
+}
+.op{
+    background-color: teal;
+    color: rgb(15, 53, 90);;
+}
+
+#ecran{
+    width: 390px;
+    height: 50px;
+    border: 1px solid white;
+    color: rgb(65, 13, 13);
+    background-color: rgb(136, 148, 160);
+    box-sizing: border-box; 
+    font-size: 20px; 
+    padding: 25px;
+    /* outline: 6px solid rgb(149, 143, 143);
+    outline-offset: -5px; */
+    box-shadow: 0 4px 2px -2px gray;
+}
+#ecran ::-ms-value{
+    animation:linear marqueelike 20s infinite ;
+}
+@keyframes marqueelike {
+    0%, 100% {margin-left:0;}
+    99.99% {margin-left:-100%;}
+}
+
