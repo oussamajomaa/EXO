@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        background-image: url('modele/Fromagess.jpg');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    section {
+        float: right;
+        height: 100vh;
+    }
+</style>
+
+<body>
+    <section></section>
+    <script>
+        class Fromages {
+            constructor(nom, type, pays, classement, target) { // (nom,type.... == paramètres)
+                this.nom = nom
+                this.type = type
+                this.pays = pays
+                this.classement = classement
+                this.target = target
+                this.classementElt // Pour rendre la variable global à l'objet, il faut la mettre dans le contructeur en utilisant this.laVariable. Si on ne le met pas, la variable est crée quand même car JS est dynamique, autre language de classe pas possible
+                this.appendFromage()  // la méthode est exécutée directement quand elle est dans le contructeur lorqu'on instancie un nouvel objet Fromages 
+                // dans le constructeur toujours rappeler this. la méthode
+            }
+            appendFromage() { // méthode .....() car JS OBJET pas de mot clé function
+                let article = document.createElement('article')
+                article.style.border = '2px solid black'
+                article.style.width = '36vw'
+                article.style.marginTop = '2.5vh'
+                article.style.padding = '2px'
+                let nom = document.createElement('h2')
+                this.classementElt = document.createElement('p')
+                this.etoile()
+                let paysElt = document.createElement('p')
+                nom.textContent = this.nom
+                paysElt.textContent = ` Fromage : ${this.type} / Pays :${this.pays}`
+                article.appendChild(nom)
+                article.appendChild(this.classementElt)
+                article.appendChild(paysElt)
+                this.target.appendChild(article)
+            }
+            etoile() {
+                for (let i = 0; i < this.classement; i++) {
+                    let stars = document.createElement('img')
+                    stars.src = 'etoile.png'
+                    this.classementElt.appendChild(stars)
+                    stars.style.width = '2vw'
+                }
+            }
+        }
+        let section = document.querySelector('section')
+        let request = new XMLHttpRequest();
+        request.onreadystatechange = function () {
+            console.log(request.status)
+            if (request.readyState === 4) {
+                let response = JSON.parse(this.response) // Si non stockées dans une variable this.response.chapitre est undefined
+                for (let i = 0; i < response.length; i++) {
+                    let article = new Fromages(response[i].nom, response[i].type, response[i].pays, response[i].classement, section)
+                    // console.log(article) // (response[i].type = arguments du contructeur de la class Fromages )
+                    // article.append() Si ya pas de this.append() dans le constructeur, il faut appeler la méthode comme ceci
+                }
+            }
+        }
+        request.open('GET', "fromage.json", true);
+        request.send()
+    </script>
+</body>
+
+</html>

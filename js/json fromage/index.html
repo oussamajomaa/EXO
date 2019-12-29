@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>json fromage</title>
     <style>
         body {
@@ -16,109 +17,97 @@
 </head>
 
 <body>
+    <script src="class.js"></script>
+    <script src="index.js"></script>
     <script>
 
-        let section = document.createElement('section');
-        document.body.appendChild(section);
-        section.style.width = '25%';
-        section.style.display = 'flex';
-        section.style.flexFlow = 'column';
-        section.style.cssFloat = 'right';
-        let h1 = document.createElement('h1');
-        document.body.appendChild(h1);
-        h1.textContent = 'Les meilleurs Fromage du Monde';
-        h1.style.writingMode = 'vertical-lr';
-        h1.style.position = 'fixed'
-        h1.style.left = '70%';
-        h1.style.top = '22%';
-        h1.style.color = 'yellow';
+        // let section = document.createElement('section');
+        // document.body.appendChild(section);
+        // section.style.width = '25%';
+        // section.style.display = 'flex';
+        // section.style.flexFlow = 'column';
+        // section.style.cssFloat = 'right';
+        // let h1 = document.createElement('h1');
+        // document.body.appendChild(h1);
+        // h1.textContent = 'Les meilleurs Fromage du Monde';
+        // h1.style.writingMode = 'vertical-lr';
+        // h1.style.position = 'fixed'
+        // h1.style.left = '70%';
+        // h1.style.top = '22%';
+        // h1.style.color = 'yellow';
 
-        function addElement(type, txt, target){
-            let p = document.createElement(type);
-            console.log(txt, txt.length);
-            if(txt.length > 0){
-                console.log(p);
-                p.textContent(txt);
-            }
-            
-            target.appendChild(p);
+        // function addElement(type, txt, target) {
+        //     let el = document.createElement(type);
 
-            return p;
-        }
 
-        let xhr = new XMLHttpRequest();
+        //     if (txt.length > 0) {
+        //         el.textContent = txt;
+        //     }
 
-        xhr.onreadystatechange = function () {
+        //     target.appendChild(el);
 
-            if (this.readyState == 4 && this.status == 200) {
-                let rep = JSON.parse(xhr.response);
-                console.log('hi')
-                for (let i = 0; i < rep.length; i++) {
+        //     return el;
 
-                    let article = document.createElement('article');
-                    article.setAttribute('class', 'fromage');
-                    section.appendChild(article);
+        // }
 
-                    let p1 = addElement('h2', rep[i].nom, article);
-                    let p2 = addElement('h3', rep[i].type, article);
-                    let p3 = addElement('h4', rep[i].pays, article);
-                    let div = addElement('div', '', article);
+        // let xhr = new XMLHttpRequest();
+        // xhr.open('get', 'fromage.json');
+        // xhr.send();
 
-                    // let p1 = document.createElement('h2');
-                    // let p2 = document.createElement('h3');
-                    // let p3 = document.createElement('h4');
-                    // let div = document.createElement('div');
+        // xhr.addEventListener('load', () => {
+        //     let rep = JSON.parse(xhr.response);
 
-                    // article.appendChild(p1);
-                    // article.appendChild(p2);
-                    // article.appendChild(p3);
-                    // article.appendChild(div);
+        //     for (let i = 0; i < rep.length; i++) {
 
-                    // p1.textContent = rep[i].nom;
-                    // p2.textContent = rep[i].type;
-                    // p3.textContent = rep[i].pays;
+        //         let article = document.createElement('article');
+        //         article.setAttribute('class', 'fromage');
+        //         section.appendChild(article);
 
-                    function fromage(d) {
-                        let img = document.createElement('img');
-                        div.appendChild(img);
-                        img.src = 'etoile.png';
-                        img.style.width = '10%';
-                    }
+        //         let h2 = addElement('h2', rep[i].nom, article);
+        //         let h3 = addElement('h3', rep[i].type, article);
+        //         let h4 = addElement('h4', rep[i].pays, article);
+        //         let div = addElement('div', '', article);
 
-                    switch (rep[i].classement) {
-                        case 1:
-                            fromage(div);
-                            break;
-                        case 2:
-                            for (let j = 0; j < 2; j++) { fromage(div); }
-                            break;
-                        case 3:
-                            for (let j = 0; j < 3; j++) { fromage(div); }
-                            break;
-                        case 4:
-                            for (let j = 0; j < 4; j++) { fromage(div); }
-                            break;
-                        case 5:
-                            for (let j = 0; j < 5; j++) { fromage(div); }
-                            break;
-                        case 6:
-                            for (let j = 0; j < 6; j++) { fromage(div); }
-                            break;
-                    }
 
-                    article.style.display = 'flex';
-                    article.style.flexFlow = 'column'
-                    article.style.backgroundColor = 'white';
-                    article.style.width = '100%';
-                    article.style.margin = '1%';
-                    article.style.padding = '10px'
+        //         function addStar(d) {
+        //             let img = document.createElement('img');
+        //             div.appendChild(img);
+        //             img.src = 'etoile.png';
+        //             img.style.width = '10%';
+        //         }
 
-                }
-            }
-        }
+        //         switch (rep[i].classement) {
+        //             case 1:
+        //                 addStar(div);
+        //                 break;
+        //             case 2:
+        //                 for (let j = 0; j < 2; j++) { addStar(div); }
+        //                 break;
+        //             case 3:
+        //                 for (let j = 0; j < 3; j++) { addStar(div); }
+        //                 break;
+        //             case 4:
+        //                 for (let j = 0; j < 4; j++) { addStar(div); }
+        //                 break;
+        //             case 5:
+        //                 for (let j = 0; j < 5; j++) { addStar(div); }
+        //                 break;
+        //             case 6:
+        //                 for (let j = 0; j < 6; j++) { addStar(div); }
+        //                 break;
+        //         }
 
-        xhr.open('get', 'fromage.json', true);
-        xhr.send();
+        //         article.style.display = 'flex';
+        //         article.style.flexFlow = 'column'
+        //         article.style.backgroundColor = 'white';
+        //         article.style.width = '100%';
+        //         article.style.margin = '1%';
+        //         article.style.padding = '10px'
+
+        //     }
+        // })
+
+
 
     </script>
 </body>

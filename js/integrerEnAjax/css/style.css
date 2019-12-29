@@ -1,0 +1,50 @@
+html {
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    width: 60vw;
+    min-height: 100vh;
+    margin: auto;
+    background-color: white;
+  }
+  
+  nav {
+    background-color: black;
+  }
+  
+  nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  nav ul li {
+    width: 33.33%;
+    display: block;
+    text-align: center;
+    list-style-type: none;
+    height: 50px;
+    line-height: 50px;
+  }
+  
+  nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+  }
+  
+  nav ul li a:hover {
+    background-color: white;
+    color: black;
+  }
+
+  section{
+      padding: 1em;
+  }
+
