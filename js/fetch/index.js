@@ -1,6 +1,6 @@
 
 let title = document.createElement('p');
-title.textContent = 'GAME OF THROWN, les maisons, les personnages';
+title.textContent = 'GAME OF THRONE, les maisons, les personnages';
 document.body.appendChild(title);
 
 fetch('got.json')
@@ -11,7 +11,7 @@ fetch('got.json')
             let got = new GameOfThrown(el.nom, el.wikiSuffix, el.gens, el.name, el.description, el.image, el.wikiSuffix);
         });
     })
-    .catch(err => console.log("le fichier n'existe pas"))
+    .catch(err => console.log("le fichier n'existe pas"));
 
 
 // $.getJSON('got.json', (data) => {
